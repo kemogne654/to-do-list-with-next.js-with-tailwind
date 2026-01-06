@@ -1,5 +1,5 @@
 // API Configuration
-const API_BASE_URL = 'http://localhost:8080';
+const API_BASE_URL = 'https://todo-backend-95t0.onrender.com';
 
 // Types
 export interface User {
