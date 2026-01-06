@@ -72,15 +72,22 @@ export default function TodoDashboard() {
     e.preventDefault();
     if (!form.title.trim()) return;
 
+    console.log('Creating todo with form data:', form);
+
     try {
-      await createTodo({
+      const todoData = {
         title: form.title,
         description: form.description || undefined,
         category: form.category,
         priority: form.priority,
         dueDate: form.dueDate || undefined,
         assignedTo: form.assignedTo || undefined
-      });
+      };
+      
+      console.log('Sending todo data to API:', todoData);
+      
+      const newTodo = await createTodo(todoData);
+      console.log('Created todo response:', newTodo);
       
       setForm({
         title: '',
@@ -211,6 +218,13 @@ export default function TodoDashboard() {
   const userStats = getUserStats();
 
   const filteredTodos = todos.filter(todo => {
+    console.log('Todo data:', {
+      id: todo.id,
+      title: todo.title,
+      assignedTo: todo.assignedTo,
+      status: todo.status
+    });
+    
     if (statusFilter !== 'all' && todo.status !== statusFilter) return false;
     if (categoryFilter !== 'all' && todo.category !== categoryFilter) return false;
     
