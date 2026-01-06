@@ -78,8 +78,7 @@ export default function TodoDashboard() {
         description: form.description || undefined,
         category: form.category,
         priority: form.priority,
-        dueDate: form.dueDate || undefined,
-        assignedTo: form.assignedTo || undefined
+        dueDate: form.dueDate || undefined
       });
       
       setForm({

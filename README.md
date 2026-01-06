@@ -4,25 +4,25 @@ A comprehensive todo management dashboard built with Next.js 16 and Tailwind CSS
 
 ## Features
 
-### 📝 **Create Tab**
+###  **Create Tab**
 - Add todos with title, description, category, priority, and due date
 - Form validation and reset functionality
 - Rich todo creation with multiple fields
 
-### 📋 **List Tab**
+###  **List Tab**
 - View all todos with advanced filtering
 - Filter by status (all/pending/completed) and category
 - Inline editing with save/cancel options
 - Visual priority indicators and due date tracking
 - Overdue task highlighting
 
-### 📊 **Analytics Tab**
+###  **Analytics Tab**
 - Real-time statistics dashboard
 - Total, completed, pending, and overdue counters
 - Category breakdown with progress bars
 - Priority distribution visualization
 
-### 🎯 **Advanced Features**
+###  **Advanced Features**
 - **Categories**: Personal, Work, Shopping, Health, Other
 - **Priorities**: Low, Medium, High with color coding
 - **Due Dates**: Track deadlines and overdue tasks
@@ -125,11 +125,11 @@ npx vercel
 
 ## Features Showcase
 
-- ✅ **Full CRUD Operations**
-- 🏷️ **Category Management**
-- ⚡ **Priority Levels**
-- 📅 **Due Date Tracking**
-- 🔍 **Advanced Filtering**
-- 📈 **Real-time Analytics**
-- 🎨 **Responsive Design**
-- ⌨️ **Keyboard Support**
+-  **Full CRUD Operations**
+-  **Category Management**
+-  **Priority Levels**
+-  **Due Date Tracking**
+-  **Advanced Filtering**
+-  **Real-time Analytics**
+-  **Responsive Design**
+-  **Keyboard Support**
