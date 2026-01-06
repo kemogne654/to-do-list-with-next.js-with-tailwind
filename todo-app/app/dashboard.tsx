@@ -228,19 +228,19 @@ export default function TodoDashboard() {
     if (statusFilter !== 'all' && todo.status !== statusFilter) return false;
     if (categoryFilter !== 'all' && todo.category !== categoryFilter) return false;
     
-    // For list tab (users), show only pending todos
+    // For list tab (users), show only pending todos assigned to them
     if (activeTab === 'list' && user?.role === 'user') {
-      return (todo.status === 'pending') && (!todo.assignedTo || todo.assignedTo === user.email);
+      return (todo.status === 'pending') && (todo.assignedTo === user.email);
     }
     
-    // For in-progress tab, show only in-progress todos
+    // For in-progress tab, show only in-progress todos assigned to them
     if (activeTab === 'in-progress' && user?.role === 'user') {
-      return (todo.status === 'in-process') && (!todo.assignedTo || todo.assignedTo === user.email);
+      return (todo.status === 'in-process') && (todo.assignedTo === user.email);
     }
     
-    // For completed tab, show only completed todos
+    // For completed tab, show only completed todos assigned to them
     if (activeTab === 'completed' && user?.role === 'user') {
-      return (todo.status === 'completed') && (!todo.assignedTo || todo.assignedTo === user.email);
+      return (todo.status === 'completed') && (todo.assignedTo === user.email);
     }
     
     // For admin list tab, show only personal todos (not assigned)
@@ -251,11 +251,6 @@ export default function TodoDashboard() {
     // For assignments tab, show only assigned todos
     if (activeTab === 'assignments' && user?.role === 'admin') {
       return todo.assignedTo && todo.assignedTo !== user.email;
-    }
-    
-    // For regular users, show their assigned todos and personal todos
-    if (user?.role === 'user') {
-      return !todo.assignedTo || todo.assignedTo === user.email;
     }
     
     return true;
