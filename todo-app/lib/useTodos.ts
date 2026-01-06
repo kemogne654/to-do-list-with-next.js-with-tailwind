@@ -44,6 +44,7 @@ export function useTodos() {
     category: string;
     priority: string;
     dueDate?: string;
+    assignedTo?: string;
   }) => {
     try {
       setError(null);

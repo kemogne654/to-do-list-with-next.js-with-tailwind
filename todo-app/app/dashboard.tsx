@@ -214,35 +214,19 @@ export default function TodoDashboard() {
     if (statusFilter !== 'all' && todo.status !== statusFilter) return false;
     if (categoryFilter !== 'all' && todo.category !== categoryFilter) return false;
     
-    // Debug logging
-    console.log('Filtering todo:', {
-      todoId: todo.id,
-      title: todo.title,
-      assignedTo: todo.assignedTo,
-      userEmail: user?.email,
-      userRole: user?.role,
-      activeTab
-    });
-    
     // For list tab (users), show only pending todos
     if (activeTab === 'list' && user?.role === 'user') {
-      const shouldShow = (todo.status === 'pending') && (!todo.assignedTo || todo.assignedTo === user.email);
-      console.log('List tab filter result:', shouldShow);
-      return shouldShow;
+      return (todo.status === 'pending') && (!todo.assignedTo || todo.assignedTo === user.email);
     }
     
     // For in-progress tab, show only in-progress todos
     if (activeTab === 'in-progress' && user?.role === 'user') {
-      const shouldShow = (todo.status === 'in-process') && (!todo.assignedTo || todo.assignedTo === user.email);
-      console.log('In-progress tab filter result:', shouldShow);
-      return shouldShow;
+      return (todo.status === 'in-process') && (!todo.assignedTo || todo.assignedTo === user.email);
     }
     
     // For completed tab, show only completed todos
     if (activeTab === 'completed' && user?.role === 'user') {
-      const shouldShow = (todo.status === 'completed') && (!todo.assignedTo || todo.assignedTo === user.email);
-      console.log('Completed tab filter result:', shouldShow);
-      return shouldShow;
+      return (todo.status === 'completed') && (!todo.assignedTo || todo.assignedTo === user.email);
     }
     
     // For admin list tab, show only personal todos (not assigned)
